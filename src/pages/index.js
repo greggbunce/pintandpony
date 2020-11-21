@@ -5,9 +5,10 @@ import Layout from "../components/layout"
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>Hello.</h1>
-      <h2>I'm Gregg, a digital designer living in sunny Worthing.</h2>
-      <p>Need a digital designer <Link to="/contact">Contact me.</Link></p>
+      <h1>The Pint & Pony.</h1>
+      <h2>The Pint & Pony is a luxury horsebox conversion, offering a mobile bar service tailored to your needs!</h2>
+      <p>We service all events from weddings, birthdays, private parties, corporate events and anything in between. Offering a Full Bar service across the UK.</p>
+      <button><Link to="/contact">Enquire Now</Link></button>
     </Layout>
   )
 }
