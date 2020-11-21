@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "The Pint & Pony",
-    description: "Greggory Alan Bunce"
+    description: "The Pint & Pony © 2020"
   },
   plugins: [
     "gatsby-plugin-sass",

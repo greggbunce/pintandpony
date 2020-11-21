@@ -2,6 +2,7 @@ import React from "react"
 import Header from "./header"
 import Footer from "./footer"
 import "../scss/reset.scss"
+import "../scss/global.scss"
 import layoutStyles from "./layout.module.scss"
 
 const Layout = (props) => {
