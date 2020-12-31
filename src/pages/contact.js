@@ -7,7 +7,7 @@ const ContactPage = () => {
     return(
         <Layout>
 
-            <Hero title="Coming soon" />
+            <Hero title="Contact Us" />
 
             <main className="container internal-main">
 

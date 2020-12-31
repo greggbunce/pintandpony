@@ -10,16 +10,19 @@ const AboutPage = () => {
     return (
         <Layout>
         
-            <Hero title="Meet the Team" />
+            <Hero title="About us" />
 
             <main className="container internal-main">
 
                 <div className="row">
                     <div className="col-lg-8">
-                        <h2>We’re Tom and Duran, the owners of The Pint & Pony.</h2>
-                        <p>We are two mates from Sussex that have set up a mobile bar after struggling to find something for our own event at a reasonable price.</p>
-                        <p>We're currently in the process of transforming our horse trailer into the perfect mobile bar for your event.</p>
-                        <p>We’re aiming to debut The Pint & Pony in early 2021, providing a full bar service with packages tailored to you.</p>
+                        <h2>The idea</h2>
+                        <p>The neighbourhood micro pub vibe, serving the best in local real ales, beers, gins &amp; wines personalized to your tastes.</p>
+                        <p>Serving your favourite local craft ale to you and your friends at that big birthday, or pouring a fine Sussex or Kent sparkling wine to guests at your wedding and everything in-between</p>
+                        <hr />
+                        <h2>The guys</h2>
+                        <p>The Pint & Pony is the brainchild and creation of Duran Gregg, and Tom, mates form sunny Sussex on the South Coast</p>
+                        <p>Seeing the demand for a unique Mobile Micro Pub whilst researching services for their own events gave the guys the drive to combine their creative, design and engineering expertise to produce the Pint & Pony.</p>
                     </div>
                     <div className="col-lg-4">
                         <CardButton colour="green" title="Let's chat!" buttonLink="/contact" buttonText="Get in touch" icon={champagneIcon}>
