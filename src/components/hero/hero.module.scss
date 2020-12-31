@@ -1,0 +1,59 @@
+.hero{
+    background-image: url(./hero.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    @include component-margin;
+    &.home{
+        min-height: 800px;
+        margin: 0;
+        &:after{
+            position: absolute;
+            content: '';
+            background: #fff;
+            width: 150%;
+            height: 350px;
+            transform:rotate(-10deg);
+            left: -100px;
+            right: 0;
+            bottom: -150px;
+            z-index: 0;
+        }
+        .hero-content{
+            margin: 0 auto 100px;
+        }
+    }
+    &:before{
+        background: rgba($blue, 0.85);
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .hero-content{
+        max-width: 500px;
+        margin: 80px auto 0;
+        p{
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .hero.home{
+        min-height: 700px;
+        .hero-content{
+            margin: 0 auto 170px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.layout{
+    position: relative;
+}
+.withBackground{
+    overflow: hidden;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0;
+    .section::after{
+        position: absolute;
+        content: '';
+        background: $grey;
+        width: 150%;
+        height: 350px;
+        transform:rotate(10deg);
+        left: -100px;
+        right: 0;
+        bottom: 350px;
+        z-index: -1;
+    }
+}

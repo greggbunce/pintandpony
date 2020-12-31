@@ -1,0 +1,114 @@
+@mixin app-transition($property, $duration, $function){
+    -webkit-transition: $property $duration $function;
+        -moz-transition: $property $duration $function;
+            -ms-transition: $property $duration $function;
+                -o-transition: $property $duration $function;
+                    transition: $property $duration $function;
+}
+
+@mixin component-margin{
+    margin-bottom: 30px;
+}
+
+@mixin font-reg{
+    font-family: brandon-grotesque,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin font-bold{
+    font-family: brandon-grotesque,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin card{
+    @include component-margin;
+    text-align: center;
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        border: 1px solid $grey;
+        background: transparent;
+        outline: 1px solid transparent;
+        @include app-transition(all, 0.5s, ease);
+    }
+    &.blue{
+        background: $blue;
+    }
+    &.teal{
+        background: $teal;
+        &:hover{
+            &:before{
+                background: darken($teal, 5%);
+                outline: 1px solid $grey;
+            }
+        }
+    }
+    &.green{
+        background: $green;
+        &:hover{
+            &:before{
+                background: darken($green, 5%);
+                outline: 1px solid $grey;
+            }
+        }
+    }
+    h2{
+        margin: 0 0 10px;
+    }
+    p{
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+    hr{
+        max-width: 120px;
+        background: $grey;
+        border: 0;
+        height: 2px;
+        margin: 30px auto 10px auto;
+    }
+}
+
+@mixin card-inner{
+    padding: 70px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+@mixin cta{
+    background: $orange;
+    border-radius: 3px;
+    padding: 0.7rem 1rem 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include font-bold;
+    &:hover{
+        color: #fff;
+        background: darken($orange, 5%);
+    }
+}
+
+@mixin button{
+    display: inline-block;
+    border: 2px solid $blue;
+    color: $blue;
+    padding: 0.7rem 1rem 0.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include font-bold;
+    &:hover{
+        color: #fff;
+        background: $blue;
+    }
+}

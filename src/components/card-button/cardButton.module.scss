@@ -1,0 +1,12 @@
+.card-button{
+    @include card;
+    @include card-inner;
+    &:before{
+        z-index: -1;
+    }
+    .button{
+        @include cta;
+        display: inline-block;
+        margin: 30px 0 10px;
+    }
+}

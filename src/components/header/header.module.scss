@@ -1,0 +1,17 @@
+.header{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+@include media-breakpoint-down(xl){}
+
+@include media-breakpoint-down(lg){}
+
+@include media-breakpoint-down(md){}
+
+@include media-breakpoint-down(sm){}
+
+@include media-breakpoint-down(xs){}

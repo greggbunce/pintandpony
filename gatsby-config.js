@@ -6,6 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: "/2021site",
   siteMetadata: {
     title: "The Pint & Pony",
     description: "The Pint & Pony © 2020"
@@ -40,6 +41,14 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'dym8qkl',
+        }
+      }
+    },
   ]
 }
