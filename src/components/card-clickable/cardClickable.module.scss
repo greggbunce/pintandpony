@@ -1,0 +1,6 @@
+.card-clickable{
+    @include card;
+    a{
+        @include card-inner;
+    }
+}

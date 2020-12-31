@@ -1,0 +1,127 @@
+.navbar.navbar-expand-lg{
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+.navList{
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    li{
+        display: inline-block;
+        .navItem{
+            @include font-bold;
+            color: #fff;
+            margin: 0;
+            padding: 0.7rem 1rem 0.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            border-bottom: 2px solid transparent;
+            &:hover{
+                color: $grey;
+            }
+            &.active{
+                border-bottom-color: $grey;
+            }
+            &.navCta{
+                @include cta;
+                margin-left: 1rem;
+                &.active{
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down(xl){}
+
+@include media-breakpoint-down(lg){}
+
+@include media-breakpoint-down(md){
+    // toggle navigation
+    .navbar-light .navbar-toggler{
+        position: absolute;
+        right: 0;
+        top: 50px;
+        border: 0;
+        padding-right: 0;
+        padding: 15px;
+        &:active, &:focus{
+            outline: 0;
+        }
+        .navbar-toggler-icon{ // open navigation
+            background-image: none;
+            display: block;
+            height: 0;
+            background: #fff;
+            width: 25px;
+            &:before, &:after{
+                @include app-transition(transform, 0.5s, ease);
+                content: '';
+                display: block;
+                background: #fff;
+                width: 25px;
+                height: 2px;
+                position: absolute;
+            }
+            &:before{
+                top: 15px;
+                transform:rotate(45deg);
+            }
+            &:after{
+                bottom: 13px;
+                transform:rotate(-45deg);
+            }
+        }
+        &.collapsed{ // closed navigation
+            .navbar-toggler-icon{
+                height: 2px;
+                &:before{
+                    top: 7px;
+                    transform: rotate(0deg);
+                }
+                &:after{
+                    bottom: 7px;
+                    transform: rotate(0deg);
+                }
+            }
+        }    
+    }
+
+    // nav list
+    .navbar.navbar-expand-lg{
+        top: 0;
+        left: 0;
+    }
+    .navList{
+        text-align: center;
+        margin: 70px 0 0;
+        padding: 30px 0;
+        li{
+            display: block;
+            .navItem{
+                display: inline-block;
+                &.navCta{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .navbar-light .navbar-toggler{
+        top: 20px;
+    }
+    .navList{
+        padding: 0;
+        li{
+            font-size: 1.14rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){}

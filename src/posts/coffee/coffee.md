@@ -1,11 +1,12 @@
 ---
 title: "Coffee!"
 date: "20/11/2020"
+featuredImage: ./thumb.jpg
 ---
 
 This is a blog post all about coffee!
 
-![image of laptop](./coffee.jpg)
+![image of coffee](./coffee.jpg)
 
 ## Topics covered
 
