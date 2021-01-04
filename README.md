@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  The Pint &map; Pony - website
+  The Pint & Pony - website
 </h1>
 <h3>Commands 🚀</h3>
 <ul>
