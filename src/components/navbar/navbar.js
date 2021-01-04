@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import navbarStyles from "./navbar.scss"
 import Navbar from 'react-bootstrap/Navbar';
@@ -21,10 +21,10 @@ const Navigation = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setMode(mode === 'navActive' ? '' : 'navActive')} />
             <Navbar.Collapse id="basic-navbar-nav" className={navbarStyles.navWrapper}>
                 <ul className="navList">
-                    <li><Link className="navItem" activeClassName="active" to="/about">About</Link></li>
-                    <li><Link className="navItem" activeClassName="active" to="/packages">Packages</Link></li>
-                    <li><Link className="navItem" activeClassName="active" to="/blog">Blog</Link></li>
-                    <li><Link className="navItem navCta" activeClassName="active" to="/contact">Contact</Link></li>
+                    <li><AniLink paintDrip hex="#DEE2E6" duration={0.8} className="navItem" activeClassName="active" to="/about">About</AniLink></li>
+                    <li><AniLink paintDrip hex="#DEE2E6" duration={0.8} className="navItem" activeClassName="active" to="/packages">Packages</AniLink></li>
+                    <li><AniLink paintDrip hex="#DEE2E6" duration={0.8} className="navItem" activeClassName="active" to="/blog">Blog</AniLink></li>
+                    <li><AniLink paintDrip hex="#DEE2E6" duration={0.8} className="navItem navCta" activeClassName="active" to="/contact">Contact</AniLink></li>
                 </ul>
             </Navbar.Collapse>
         </Navbar>

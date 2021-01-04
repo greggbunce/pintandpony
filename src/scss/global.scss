@@ -1,5 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
+// fix animation z-index issue
+.tl-wrapper.tl-wrapper--mount.tl-wrapper-status--entered{
+    z-index: auto !important;
+    transform: none !important;
+}
+
 body{
     margin: 10px;
     @include font-reg;
@@ -70,6 +76,10 @@ a{
 .icon{
     max-width: 120px;
     margin: 0 0 10px;
+}
+
+.align-center{
+    text-align: center;
 }
 
 @include media-breakpoint-down(sm){

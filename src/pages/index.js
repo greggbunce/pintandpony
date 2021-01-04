@@ -1,5 +1,6 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/layout/layout"
 import Hero from "../components/hero/hero"
 import CardClickable from "../components/card-clickable/card-clickable"
@@ -38,8 +39,8 @@ const IndexPage = () => {
   return (
     <Layout class="withBackground">
 
-      <Hero title="The Pint &amp; Pony" class="home">
-        <img className="icon" src={horseShoeIcon} alt="The Pint &amp; Pony" />
+      <Hero title="The Pint &amp; Pony" iconBeforeTitle={<img className="icon" src={horseShoeIcon} alt="The Pint &amp; Pony" />} class="home">
+        <img className={`icon ${homeStyles.bottomIcon}`} src={horseShoeIcon} alt="The Pint &amp; Pony" />
         <p>A Sussex based mobile micro-pub available for weddings, birthdays, private parties, corporate events & everything in between.</p>
       </Hero>
       
@@ -75,13 +76,13 @@ const IndexPage = () => {
               return (
                 <div className="col-lg-4">
                   <div className={homeStyles.blogFeedItem}>
-                    <Link to={`/blog/${edge.node.fields.slug}`}>
+                    <AniLink paintDrip hex="#DEE2E6" duration={0.8} to={`/blog/${edge.node.fields.slug}`}>
                       <div className={homeStyles.blogFeedContent}>
                         <p>{edge.node.frontmatter.date}</p>
                         <h3>{edge.node.frontmatter.title}</h3>
                       </div>
                       <img src={edge.node.frontmatter.featuredImage.publicURL} alt={edge.node.frontmatter.title} />
-                    </Link>
+                    </AniLink>
                   </div>
                 </div>
               )
@@ -89,7 +90,7 @@ const IndexPage = () => {
         </div>
         <div className={`row ${homeStyles.blogFeed}`}>
             <div className="col-12">
-              <div className={homeStyles.button}><Link to="/blog">see all posts</Link></div>   
+              <div className={homeStyles.button}><AniLink paintDrip hex="#DEE2E6" duration={0.8} to="/blog">see all posts</AniLink></div>   
             </div>
         </div>
 

@@ -1,7 +1,8 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import logoImage from "../../images/logo.svg"
 import logoStyles from "./logo.module.scss"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Logo = () => {
     const data = useStaticQuery(graphql`
@@ -16,9 +17,9 @@ const Logo = () => {
     
     return (
         <div className={logoStyles.logo}>
-            <Link to="/">
+            <AniLink paintDrip hex="#DEE2E6" duration={0.8} to="/">
                 <img src={logoImage} alt={data.site.siteMetadata.title}/>
-            </Link>
+            </AniLink>
         </div>
     )
 }

@@ -1,7 +1,8 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/layout/layout"
 import Hero from "../components/hero/hero"
-import { Link, graphql, useStaticQuery } from "gatsby"
 import blogStyles from "./blog.module.scss"
 
 const BlogPage = () => {
@@ -38,10 +39,10 @@ const BlogPage = () => {
                             {data.allMarkdownRemark.edges.reverse().map((edge) => {
                                 return (
                                     <li className={blogStyles.post}>
-                                        <Link to={`/blog/${edge.node.fields.slug}`}>
+                                        <AniLink paintDrip hex="#DEE2E6" duration={0.8} to={`/blog/${edge.node.fields.slug}`}>
                                             <h2>{edge.node.frontmatter.title}</h2>
                                             <p>{edge.node.frontmatter.date}</p>
-                                        </Link>
+                                        </AniLink>
                                     </li>
                                 )
                             })}
