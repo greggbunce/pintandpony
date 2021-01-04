@@ -19,8 +19,8 @@ const Packages = () => {
 
                 <div className="row">
                     <div className="col-md-12">
-                        <h2>We have the package that's right for you</h2>
-                        <p>For all events, big and small, we have the right options for you</p>
+                        <h2 className="align-center">We have the package that's right for you</h2>
+                        <p className="align-center">For all events, big and small, we have the right options for you</p>
                         <hr />
                     </div>
                 </div>
@@ -49,7 +49,7 @@ const Packages = () => {
 
                 <div className="row">
                     <div className="col-md-12">
-                    <p>maybe a list of what we include as standard... draft / cask beer &amp; cider, 'professional' staff etc?</p>
+                        <p>maybe a list of what we include as standard... draft / cask beer &amp; cider, 'professional' staff etc?</p>
                         <p>We also offer special cocktail, gin, wine &amp; craft beer bar options. Click <Link to="/contact">here to find out more</Link> (THIS WILL LINK TO A NEW PAGE - NOT YET BUILT)</p>
                     </div>
                 </div>

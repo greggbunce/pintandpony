@@ -83,6 +83,9 @@
     display: block;
     position: relative;
     z-index: 1;
+    .col-md-4 &{
+        border: 1px solid lime;
+    }
 }
 
 @mixin cta{
@@ -111,4 +114,12 @@
         color: #fff;
         background: $blue;
     }
+}
+
+@mixin fadeIn{
+    @keyframes fadeIn{
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    animation: fadeIn 2.5s;
 }

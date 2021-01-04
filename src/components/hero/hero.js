@@ -8,6 +8,7 @@ const Hero = (props) => {
                 <div className="row">
                     <div className="col-12">
                         <div className={heroStyles.heroContent}>
+                            {props.iconBeforeTitle}
                             <h1>{props.title}</h1>
                             {props.children}
                         </div>

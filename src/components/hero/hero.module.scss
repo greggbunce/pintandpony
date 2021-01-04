@@ -27,6 +27,9 @@
         }
         .hero-content{
             margin: 0 auto 100px;
+            img:first-of-type{
+                display: none;
+            }
         }
     }
     &:before{
@@ -46,14 +49,36 @@
             font-size: 1.4rem;
             line-height: 2rem;
         }
+        @include fadeIn;
     }
 }
 
 @include media-breakpoint-down(sm){
-    .hero.home{
-        min-height: 700px;
-        .hero-content{
-            margin: 0 auto 170px;
+
+    .hero{
+        min-height: 250px;
+        &.home{
+            min-height: 700px;
+            .hero-content{
+                margin: 0 auto 170px;
+                img{
+                    &:first-of-type{
+                        display: initial;
+                        margin-bottom: 20px;
+                    }
+                    &:last-of-type{
+                        display: none;
+                    }
+                }
+            }
         }
     }
+
+
+
+
+
+
+
+
 }

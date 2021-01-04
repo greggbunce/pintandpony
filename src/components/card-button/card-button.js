@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import cardButtonStyles from "./cardButton.module.scss"
 
 const CardButton = (props) => {
@@ -9,7 +9,7 @@ const CardButton = (props) => {
                 <img className="icon" src={props.icon} alt={props.title} />
                 <h2>{props.title}</h2>
                 {props.children}
-                <Link className={cardButtonStyles.button} to={props.buttonLink}>{props.buttonText}</Link>
+                <AniLink paintDrip hex="#DEE2E6" duration={0.8} className={cardButtonStyles.button} to={props.buttonLink}>{props.buttonText}</AniLink>
             </div>
         </div>
     )
