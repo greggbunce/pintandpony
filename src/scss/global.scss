@@ -38,11 +38,45 @@ body{
             filter: blur(.4rem);
         }
     }
+    &.stickyHeader header{
+        position: fixed;
+        background: linear-gradient(135deg, rgba($blue,1) 39%,rgba($blue_dk,1) 100%);
+        top: 0;
+        @include slideInDown;
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.20);
+        .col-12{
+            background: linear-gradient(135deg, rgba(97,117,139,1) 0%,rgba(97,117,139,0) 100%);
+            &:before{
+                content: '';
+                width: 125px;
+                height: 125px;
+                border-radius: 110px;
+                background: $blue;
+                display: block;
+                position: absolute;
+                z-index: -19;
+                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.20);
+            }
+        }
+        div > a{ //logo
+            display: block;
+            border-radius: 110px;
+            width: 125px;
+            height: 125px;
+            margin: -15px 0 -55px;
+            border: 15px solid transparent;
+            img{
+                position: absolute;
+            }
+        }
+        .navbar.navbar-expand-lg{
+            top: 14px;
+        }
+    }
 }
 
 h1, h2, h3, h4, h5, h6, strong{
     @include font-bold;
-    text-transform: uppercase;
 }
 
 h1, h2, h3{
@@ -64,6 +98,11 @@ h3{
 p{
     font-size: 1.1rem;
     line-height: 1.5rem;
+    .col-lg-8 &{
+        &:last-of-type{
+            margin-bottom: 1.45rem;
+        }
+    }
 }
 
 a{
@@ -75,14 +114,36 @@ a{
 
 .icon{
     max-width: 120px;
-    margin: 0 0 10px;
 }
 
 .align-center{
     text-align: center;
 }
 
+.equalized-components{
+    display: flex;
+    flex-wrap: wrap;
+    @for $i from 1 through 7{
+        .col-md-#{$i},
+        .col-lg-#{$i}{
+            display: flex;
+            > div{
+                display: flex;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md){
+    body.stickyHeader header .navbar-light .navbar-toggler{
+        top: 8px;
+    }
+}
+
 @include media-breakpoint-down(sm){
+    html{
+        font-size: 15px;
+    }
     body{
         margin: 0;
         &:before{
@@ -91,12 +152,45 @@ a{
         &.navActive header{
             top: 30px;
         }
-    }
-}
-
-
-@include media-breakpoint-down(sm){
-    html{
-        font-size: 15px;
+        &.stickyHeader{
+            &.navActive header{
+                @include app-transition(all, 0.5s, ease);
+                background: none;
+                animation: none;
+                box-shadow: none;
+                .col-12{
+                    background: none;
+                }
+                img{ //logo
+                    width: auto;
+                }
+            }
+            header{
+                border-top: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 10px 0 5px;
+                .navbar-light .navbar-toggler{
+                    top: -3px;
+                }
+                .col-12{
+                    background: none;
+                    &:before{
+                        display: none;
+                    }
+                }
+                div > a{
+                    display: block;
+                    width: 55px;
+                    height: 55px;
+                    margin: 0;
+                    border: 0;
+                    img{
+                        width: 55px;
+                    }
+                }
+            }
+        }
     }
 }

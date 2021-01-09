@@ -21,11 +21,11 @@ const AboutPage = () => {
                         <p>Serving your favourite local craft ale to you and your friends at that big birthday, or pouring a fine Sussex or Kent sparkling wine to guests at your wedding and everything in-between</p>
                         <hr />
                         <h2>The guys</h2>
-                        <p>The Pint & Pony is the brainchild and creation of Duran Gregg, and Tom, mates form sunny Sussex on the South Coast</p>
+                        <p>The Pint & Pony is the brainchild and creation of Duran, Gregg and Tom, mates form sunny Sussex on the South Coast</p>
                         <p>Seeing the demand for a unique Mobile Micro Pub whilst researching services for their own events gave the guys the drive to combine their creative, design and engineering expertise to produce the Pint & Pony.</p>
                     </div>
                     <div className="col-lg-4">
-                        <CardButton colour="green" title="Let's chat!" buttonLink="/contact" buttonText="Get in touch" icon={champagneIcon}>
+                        <CardButton colour="green" title="Let's chat!" buttonLink="/contact" buttonText="Get in touch" icon={champagneIcon} columnWidth="small">
                             <p>Want to find out how we can be the perfect addition to your event? We would love to chat, drop us a line or give us a call.</p>
                         </CardButton>
                     </div>

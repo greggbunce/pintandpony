@@ -1,6 +1,9 @@
 .card-button{
     @include card;
     @include card-inner;
+    &.small{
+        @include card-inner-small;
+    }
     &:before{
         z-index: -1;
     }

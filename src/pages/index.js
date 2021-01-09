@@ -39,9 +39,9 @@ const IndexPage = () => {
   return (
     <Layout class="withBackground">
 
-      <Hero title="The Pint &amp; Pony" iconBeforeTitle={<img className="icon" src={horseShoeIcon} alt="The Pint &amp; Pony" />} class="home">
+      <Hero title={["The Pint & Pony ", <span>mobile micro-pub</span>]} iconBeforeTitle={<img className="icon" src={horseShoeIcon} alt="The Pint &amp; Pony" />} class="home">
         <img className={`icon ${homeStyles.bottomIcon}`} src={horseShoeIcon} alt="The Pint &amp; Pony" />
-        <p>A Sussex based mobile micro-pub available for weddings, birthdays, private parties, corporate events & everything in between.</p>
+        <p>A Sussex based horsebox bar available for weddings, birthdays, private parties, corporate events and everything in-between.</p>
       </Hero>
       
       <main className={`container ${homeStyles.homeMain}`}>

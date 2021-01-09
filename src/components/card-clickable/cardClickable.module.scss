@@ -3,4 +3,7 @@
     a{
         @include card-inner;
     }
+    &.small a{
+        @include card-inner-small;
+    }
 }

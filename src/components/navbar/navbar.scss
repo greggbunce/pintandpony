@@ -12,24 +12,37 @@
         display: inline-block;
         .navItem{
             @include font-bold;
-            color: #fff;
+            color: $grey;
             margin: 0;
             padding: 0.7rem 1rem 0.5rem;
             text-decoration: none;
             text-transform: uppercase;
             display: block;
-            border-bottom: 2px solid transparent;
+            //border-bottom: 2px solid transparent;
             &:hover{
-                color: $grey;
+                color: #fff;
             }
             &.active{
-                border-bottom-color: $grey;
+                position: relative;
+                color: #fff;
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: -15px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 80%;
+                    height: 2px;
+                    background: $grey;
+                }
             }
             &.navCta{
                 @include cta;
                 margin-left: 1rem;
-                &.active{
-                    border-bottom-color: transparent;
+                &.active:before{
+                    display: none;
                 }
             }
         }
@@ -49,7 +62,7 @@
         top: 50px;
         border: 0;
         padding-right: 0;
-        padding: 15px;
+        padding: 15px 20px;
         &:active, &:focus{
             outline: 0;
         }
@@ -105,6 +118,10 @@
             display: block;
             .navItem{
                 display: inline-block;
+                color: #fff;
+                &.active:before{
+                    bottom: 0;
+                }
                 &.navCta{
                     margin-left: 0;
                 }

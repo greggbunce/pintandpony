@@ -83,9 +83,13 @@
     display: block;
     position: relative;
     z-index: 1;
-    .col-md-4 &{
-        border: 1px solid lime;
+    @include media-breakpoint-down(sm){
+        padding: 50px;
     }
+}
+
+@mixin card-inner-small{
+    padding: 45px 35px;
 }
 
 @mixin cta{
@@ -121,5 +125,18 @@
         0% {opacity: 0;}
         100% {opacity: 1;}
     }
-    animation: fadeIn 2.5s;
+    animation: fadeIn 1.5s;
+}
+
+@mixin slideInDown{
+    @keyframes slideInDown{
+        0%{
+            opacity: 0;
+            transform: translateY(-2000px);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    animation: slideInDown .8s;
 }
