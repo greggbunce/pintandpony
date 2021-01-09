@@ -11,7 +11,7 @@
 
 • **Gatsby Develop on localhost port 8000:** `gatsby develop`
 
-• **Gatsby Develop from Local LAN:** `gatsby develop -H 0.0.0.0`
+• **Gatsby Develop from LAN:** `gatsby develop -H 0.0.0.0`
 
 • **Build site:** `gatsby build`
 
