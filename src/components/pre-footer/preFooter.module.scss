@@ -1,0 +1,18 @@
+.pre-footer{
+    background: $blue;
+    margin: 30px 0 -30px 0;
+    padding: 30px 30px 15px 30px;
+    color: #fff;
+    text-align: center;
+    p{
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .pre-footer{
+        margin: 0 0 -30px 0;
+        padding: 20px 20px 5px 20px;
+    }
+}

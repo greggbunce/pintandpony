@@ -1,0 +1,61 @@
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Alignment - responsive classes added form BTS 4
+@include media-breakpoint-down(xl){
+  .text-xl-left      { text-align: left !important; }
+  .text-xl-right     { text-align: right !important; }
+  .text-xl-center    { text-align: center !important; }
+}
+
+@include media-breakpoint-up(lg){
+  .text-lg-left      { text-align: left !important; }
+  .text-lg-right     { text-align: right !important; }
+  .text-lg-center    { text-align: center !important; }
+}
+
+@include media-breakpoint-down(md){
+  .text-md-left      { text-align: left !important; }
+  .text-md-right     { text-align: right !important; }
+  .text-md-center    { text-align: center !important; }
+}
+
+@include media-breakpoint-down(sm){
+  .text-sm-left      { text-align: left !important; }
+  .text-sm-right     { text-align: right !important; }
+  .text-sm-center    { text-align: center !important; } 
+}
+
+@include media-breakpoint-down(xs){
+  .text-xs-left      { text-align: left !important; }
+  .text-xs-right     { text-align: right !important; }
+  .text-xs-center    { text-align: center !important; }
+}
+
+// equalized component heights
+.equalized-components{
+    display: flex;
+    flex-wrap: wrap;
+    @for $i from 1 through 7{
+        .col-md-#{$i},
+        .col-lg-#{$i}{
+            display: flex;
+            > div{
+                display: flex;
+            }
+        }
+    }
+}
+
+// add global margin-bottom to components or wrappers
+.margin-bottom{
+  @include component-margin;
+}
+
+.white-bg{
+  background: rgba(#fff, 0.8);
+}

@@ -1,0 +1,48 @@
+.accordion{
+    @include component-margin;
+    .accordion-item{
+        margin-bottom: 15px;
+        border-bottom: 1px solid $grey;
+        background: lighten($grey, 6%);
+        &.accordion-open .accordion-title{
+            svg:first-child{
+                display: none;
+            }
+            svg:last-child{
+                display: block;
+            }
+        }
+    }
+    .accordion-title{
+        border: 1px solid $grey;
+        border-bottom: none;
+        padding: 10px 50px 10px 15px;
+        color: $blue;
+        position: relative;
+        &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        svg{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+    .accordion-collapse{
+        padding: 15px;
+        border-top: 1px dashed $grey;
+        border-left: 1px solid $grey;
+        border-right: 1px solid $grey;
+        background: lighten($grey, 8%);
+        a{
+            color: $orange;
+            &:hover{
+                color: darken($orange, 5%);
+            }
+        }
+    }
+}

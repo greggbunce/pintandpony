@@ -1,0 +1,69 @@
+.consent-wrapper{ // row
+    padding: 0 0 10px;
+    .consent-content{ // col-lg-9
+        padding-top: 8px;
+        line-height: 1.1;
+        text-align: right;
+        a{
+            color: $orange;
+            &:hover{
+                color: darken($orange, 5%);
+            }
+        }
+    } 
+    .consent-buttons{ // col-lg-3
+        position: initial;
+        .decline-button,
+        .accept-button{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .decline-button{
+            background: none;
+            border: 0;
+            padding: 0;
+            font-size: .9rem;
+            color: darken($grey, 5%);
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+        .accept-button{
+            border: 0;
+            background: green;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 3px;
+            @include app-transition(all, 0.5s, ease);
+            &:hover{
+                background: lighten(green, 5%);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xl){}
+@include media-breakpoint-down(lg){}
+
+@include media-breakpoint-down(md){
+    .consent-wrapper{ // row
+        .consent-content, // col-lg-9
+        .consent-buttons{ // col-lg-3
+            text-align: center;
+        }
+        .accept-button{
+            margin-top: 10px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .consent-wrapper{ // row
+        .consent-content{ // col-lg-9
+            padding: 8px 35px 0;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs){}

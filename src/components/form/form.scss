@@ -1,0 +1,192 @@
+form{
+    margin: 30px 0 0 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    sup{
+        color: $error;
+    }
+    small.message-chars-left{
+        color: darken($grey, 25%);
+        margin-bottom: 25px;
+    }
+    .error{
+        border-color: $error;
+        background-color: $error_bg;
+        &:focus,
+        &:active{
+            background-color: #fff;
+        }
+    }
+    span{ // error message
+        margin: -20px 0 20px;
+        color: $error;
+        font-size: 0.7rem;
+        line-height: 1.1;
+        display: block;
+    }
+    .success-message{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1;
+        text-align: center;
+        p{
+            @include font-reg;
+        }
+    }
+}
+
+.input-wrapper{
+    position: relative;
+    label{
+        position: absolute;
+        top: 13px;
+        left: 16px;
+        color: darken($grey, 25%);
+        font-size: 0.8rem;
+        pointer-events: none;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea{
+        padding: 20px 15px 2px 14px;
+        border-radius: 5px;
+        border: 1px solid darken($grey, 10%);
+        position: relative;
+        font-size: .8rem;
+        color: darken($grey, 35%);
+        appearance: none;
+        width: 100%;
+        margin-bottom: 25px;
+        &:focus,
+        &:active{
+            outline: 0;
+        }
+        &:focus + label,
+        &:not(:placeholder-shown) + label{    
+            @include app-transition(all, .5s, ease);
+            top: 3px;
+            font-size: 0.6rem;
+            color: darken($grey, 25%);
+        }
+        &.error{
+            border-color: $error;
+            background-color: $error_bg;
+            &:focus,
+            &:active{
+                background-color: #fff;
+                box-shadow: none;
+            }
+            &:not(:placeholder-shown){
+                border-color: $error;
+            }
+        }
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea{
+        &:not(:placeholder-shown){
+            border-color: rgb(15, 179, 15);
+            background: mintcream;
+        }
+    }
+    select{
+        border-color: darken($grey, 10%);
+        background-color: transparent;
+        padding-left: 11px;
+        &.bar{
+            border-color: rgb(15, 179, 15);
+            background: mintcream;
+        }
+    }
+    textarea{
+        margin: 0;
+        height: 110px;
+    }
+    .textarea-error{
+        margin: 5px 0 0;
+    }
+    // hide the placeholder text before the user clicks in the field
+    input::-webkit-input-placeholder{opacity: 0;}
+    input:-moz-placeholder{opacity: 0;}
+    input::-moz-placeholder{opacity: 0;}
+    input:-ms-input-placeholder{opacity: 0;}
+    input:focus::-webkit-input-placeholder{opacity: 1;}
+    input:focus:-moz-placeholder{opacity: 1;}
+    input:focus::-moz-placeholder{opacity: 1;}
+    input:focus:-ms-input-placeholder{opacity: 1;}
+    textarea::-webkit-input-placeholder{opacity: 0;}
+    textarea:-moz-placeholder{opacity: 0;}
+    textarea::-moz-placeholder{opacity: 0;}
+    textarea:-ms-input-placeholder{opacity: 0;}
+    textarea:focus::-webkit-input-placeholder{opacity: 1;}
+    textarea:focus:-moz-placeholder{opacity: 1;}
+    textarea:focus::-moz-placeholder{opacity: 1;}
+    textarea:focus:-ms-input-placeholder{opacity: 1;}
+}
+
+.input-checkbox{
+    color: darken($grey, 25%);
+    font-size: 0.8rem;
+    margin: -10px 0 15px;
+    input{
+        margin-right: 7px;
+        border-color: darken($grey, 10%);
+    }
+    span{
+        margin: 0px 0 10px;
+    }
+}
+
+button[type=submit]{
+    width: 100%;
+    background: $orange;
+    border: 0;
+    padding: 14px 10px;
+    color: #fff;
+    border-radius: 3px;
+    margin: 7px 0 5px;
+    @include font-bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+
+@include media-breakpoint-down(xl){}
+@include media-breakpoint-down(lg){}
+@include media-breakpoint-down(md){}
+@include media-breakpoint-down(sm){}
+
+@include media-breakpoint-down(xs){
+    .input-wrapper{
+        label{
+            top: 15px;
+            font-size: 1rem;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea{
+            padding: 25px 15px 5px 14px;
+            font-size: 16px;
+            &:focus + label,
+            &:not(:placeholder-shown) + label{    
+                top: 5px;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
