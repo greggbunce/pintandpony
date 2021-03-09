@@ -33,6 +33,7 @@ body{
             right: 0;
             top: 40px;
         }
+        .consent-wrapper,
         section,
         footer{
             filter: blur(.4rem);
@@ -67,6 +68,8 @@ body{
             border: 15px solid transparent;
             img{
                 position: absolute;
+                display: block;
+                width: 96px;
             }
         }
         .navbar.navbar-expand-lg{
@@ -79,20 +82,19 @@ h1, h2, h3, h4, h5, h6, strong{
     @include font-bold;
 }
 
-h1, h2, h3{
-    text-transform: uppercase;
-}
-
 h1{
     font-size: 2.6rem;
+    text-transform: uppercase;
 }
 
 h2{
     font-size: 1.7rem;
+    color: $blue;
 }
 
 h3{
     font-size: 1.5rem;
+    color: $blue;
 }
 
 p{
@@ -103,10 +105,17 @@ p{
             margin-bottom: 1.45rem;
         }
     }
+    &.larger-text{
+        font-size: 1.25rem;
+    }
 }
 
 a{
     @include app-transition(all, 0.5s, ease);
+    color: $orange;
+}
+
+a, button{
     &:active, &:focus{
         outline: 0;
     }
@@ -114,23 +123,26 @@ a{
 
 .icon{
     max-width: 120px;
+    margin-bottom: 12px;
 }
 
-.align-center{
+.alert{
+    padding: 20px;
+    color: #a72734;
+    border: 1px dashed #a72734;
     text-align: center;
+    background: #f8d7da;
 }
 
-.equalized-components{
-    display: flex;
-    flex-wrap: wrap;
-    @for $i from 1 through 7{
-        .col-md-#{$i},
-        .col-lg-#{$i}{
-            display: flex;
-            > div{
-                display: flex;
-            }
-        }
+.button-text-link{
+    border: 0;
+    padding: 0;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: $orange;
+    &:hover{
+        color: darken($orange, 5%);
     }
 }
 
@@ -142,7 +154,7 @@ a{
 
 @include media-breakpoint-down(sm){
     html{
-        font-size: 15px;
+        font-size: 15.5px;
     }
     body{
         margin: 0;

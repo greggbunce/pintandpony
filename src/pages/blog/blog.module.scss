@@ -1,0 +1,44 @@
+.posts{
+    list-style-type: none;
+    margin: 0;
+}
+
+.post{
+    margin: 0 0 1.5rem 0;
+    a{
+        background: lighten($grey, 5%);
+        color: #000;
+        display: block;
+        padding: 25px 20px;
+        text-decoration: none;
+        &:hover{
+            background: $grey;
+        }
+        h2{
+            margin: 0 0 .5rem 0;
+            line-height: 1.6rem;
+        }
+        p:last-of-type{
+            margin-bottom: 0;
+        }
+        .right .thumbnail{
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-down(xl){}
+@include media-breakpoint-down(lg){}
+@include media-breakpoint-down(md){
+    .post a{
+        .left .thumbnail{
+            display: none;
+        }
+        .right .thumbnail{
+            display: block;
+            margin: 1rem 0;
+        }
+    }
+}
+@include media-breakpoint-down(sm){}
+@include media-breakpoint-down(xs){}

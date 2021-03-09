@@ -1,0 +1,6 @@
+.gallery{
+    @include component-margin;
+    .item{
+        overflow: hidden;
+    }
+}

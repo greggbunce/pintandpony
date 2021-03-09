@@ -17,6 +17,8 @@
 
 • **Serve built site on localhost port 9000:** `gatsby serve`
 
+• **Build & serve site in single command on localhost port 9000:** `gatsby build && gatsby serve`
+
 • **If hosting on a sub-domain build using:** `gatsby build --prefix-paths`
 
 • **Serve sub-domain site on localhost port 9000 (include sub-domain in url):** `gatsby serve --prefix-paths`

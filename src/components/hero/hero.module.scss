@@ -1,6 +1,4 @@
 .hero{
-    background-image: url(./hero.png);
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +8,6 @@
     position: relative;
     overflow: hidden;
     @include component-margin;
-    @include fadeIn;
     &.home{
         min-height: 800px;
         margin: 0;
@@ -27,9 +24,16 @@
             z-index: 0;
         }
         .hero-content{
+            @include fadeIn;
             margin: 0 auto 130px;
-            img:first-of-type{
-                display: none;
+            img{
+                margin: 0;
+                &:first-of-type{
+                    display: none;
+                }
+            }
+            h1{
+                text-transform: uppercase;
             }
             span{
                 display: block;
@@ -49,8 +53,15 @@
         right: 0;
     }
     .hero-content{
-        max-width: 500px;
+        max-width: 700px;
         margin: 80px auto 0;
+        h1{
+            text-transform: none;
+        }
+        h3{
+            color: #fff;
+            margin: 0;
+        }
         p{
             margin: 0;
             font-size: 1.4rem;
@@ -60,13 +71,15 @@
 }
 
 @include media-breakpoint-down(sm){
-
     .hero{
         min-height: 250px;
         &.home{
             min-height: 700px;
             .hero-content{
                 margin: 0 auto 170px;
+                h1{
+                    font-size: 2.6rem;
+                }
                 img{
                     &:first-of-type{
                         display: initial;
@@ -79,12 +92,13 @@
             }
         }
     }
+}
 
-
-
-
-
-
-
-
+@include media-breakpoint-down(xs){
+    .hero .hero-content{
+        margin: 110px auto 0;
+        h1{
+            font-size: 2.2rem;
+        }
+    }
 }

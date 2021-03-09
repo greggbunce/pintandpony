@@ -5,6 +5,7 @@
 .blog-feed{
     text-align: center;
     h2{
+        text-transform: uppercase;
         color: $blue;
         margin: 10px 0 50px;
         display: inline-block;
@@ -64,18 +65,21 @@
             color: #fff;
             h3{
                 margin: 0;
+                color: #fff;
             }
             p{
                 margin: 0;
                 font-size: 0.8rem;
             }
         }
-        img{
+        picture{
             opacity: 0.3;
-            @include app-transition(transform, 0.5s, ease);
-            width: 100%;
+            img{
+                transition: all .5s ease !important;
+                width: 100%;
+            }
         }
-        &:hover img{
+        &:hover picture img{
             transform: scale(1.2);
         }
     }

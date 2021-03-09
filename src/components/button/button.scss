@@ -1,0 +1,23 @@
+.button{
+    .link{
+        @include button;
+    }
+    &.white .link{
+        border-color: #fff;
+        color: #fff;
+        &:hover{
+            background: #fff;
+            color: $orange;
+        }
+    }
+    &.cta .link{
+        @include cta;
+        border-color: $orange;
+        &:hover{
+            border-color: darken($orange, 5%);
+        }
+    }
+    &.true .link{ // embedded in other component
+        margin-top: 35px;
+    }
+}

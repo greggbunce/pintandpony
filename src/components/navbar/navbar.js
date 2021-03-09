@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import navbarStyles from "./navbar.scss"
+// components
 import Navbar from 'react-bootstrap/Navbar';
+
+// styles
+import navbarStyles from "./navbar.scss"
 
 const Navigation = () => {
 

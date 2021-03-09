@@ -1,7 +1,7 @@
 .navbar.navbar-expand-lg{
     position: absolute;
     top: 15px;
-    right: 0;
+    right: 15px;
     @include fadeIn;
 }
 .navList{
@@ -62,7 +62,7 @@
         top: 50px;
         border: 0;
         padding-right: 0;
-        padding: 15px 20px;
+        padding: 15px 5px 15px 20px;
         &:active, &:focus{
             outline: 0;
         }

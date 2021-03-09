@@ -1,8 +1,32 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+
+import BackgroundImage from 'gatsby-background-image'
+
 import heroStyles from "./hero.module.scss"
 
 const Hero = (props) => {
+
+    const data = useStaticQuery(graphql`
+        query Image {
+            file(relativePath: {eq: "images/hero.png"}) {
+                childImageSharp {
+                    fluid (
+                        maxWidth: 1260
+                        maxHeight: 715
+                    ) {
+                        srcSet
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+        }
+    `)
+
+    const backgoundImage = data.file.childImageSharp.fluid
+
     return (
+        <BackgroundImage fluid={backgoundImage}>
         <div className={` ${heroStyles.hero} ${heroStyles[props.class]}`}>
             <div className="container">
                 <div className="row">
@@ -16,6 +40,8 @@ const Hero = (props) => {
                 </div>
             </div>
         </div>
+        </BackgroundImage>
+
     )
 }
 
